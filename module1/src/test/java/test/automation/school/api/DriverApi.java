@@ -13,10 +13,6 @@ import java.util.concurrent.TimeUnit;
 public class DriverApi {
     public static void main(String[] args) throws Exception {
 
-
-
-
-
         CompletableFuture<Void> future2 = CompletableFuture.runAsync(()->{
             try {
                 FullLogin("hamza@gmail.com","hamza");
@@ -339,8 +335,6 @@ public static void main(String[] args) {
 
         WebElement helloWorldText = driver.findElement(By.cssSelector("#finish"));
         System.out.println("Is element displayed: " + helloWorldText.isDisplayed());
-
-
 
     }
 *
