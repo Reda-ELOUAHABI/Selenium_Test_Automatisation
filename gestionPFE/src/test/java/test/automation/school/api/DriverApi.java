@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class DriverApi {
     public static void main(String[] args) throws Exception {
 
-        CompletableFuture<Void> future2 = CompletableFuture.runAsync(()->{
+        CompletableFuture<Void> function1 = CompletableFuture.runAsync(()->{
             try {
                 FullLogin("hamza@gmail.com","hamza");
             } catch (InterruptedException e) {
@@ -21,7 +21,7 @@ public class DriverApi {
             }
         });
 
-        CompletableFuture<Void> future3 = CompletableFuture.runAsync(()->{
+        CompletableFuture<Void> function2 = CompletableFuture.runAsync(()->{
             try {
                 FullLogin("hamza123@gmail.com","hamza");
             } catch (InterruptedException e) {
@@ -29,9 +29,9 @@ public class DriverApi {
             }
         });
 
-        CompletableFuture<Void> future = CompletableFuture.allOf( future2, future3);
+        CompletableFuture<Void> function = CompletableFuture.allOf( function1, function2);
         try {
-            future.get(); // this line waits for all to be completed
+            function.get(); // this line waits for all to be completed
         } catch (InterruptedException  | ExecutionException e) {
             // Handle
         }
@@ -99,7 +99,7 @@ public static void FullLogin(String usernameValue, String passwordvValue) throws
 
 
 
-
+//MY NOTES
 
 /*
 *
